@@ -4,6 +4,7 @@
  */
 package ws;
 
+import dto.RSAutenticacionAdmin;
 import javax.ws.rs.Path;
 
 /**
@@ -14,6 +15,8 @@ import javax.ws.rs.Path;
 public class ProfesorWS {
     
     
-    
+    public RSAutenticacionAdmin autenticarProfesor(){
+        return null;
+    }
     
 }
