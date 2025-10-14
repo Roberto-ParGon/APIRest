@@ -4,8 +4,13 @@
  */
 package ws;
 
-import dto.RSAutenticacionAdmin;
+import dominio.ProfesorImp;
+import java.util.List;
+import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
+import pojo.Profesor;
 
 /**
  *
@@ -13,10 +18,11 @@ import javax.ws.rs.Path;
  */
 @Path("profesor")
 public class ProfesorWS {
-    
-    
-    public RSAutenticacionAdmin autenticarProfesor(){
-        return null;
+
+    @Path("obtener-todos")
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Profesor> obtenerTodos() {
+        return ProfesorImp.obtenerTodos();
     }
-    
 }

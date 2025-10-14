@@ -17,6 +17,7 @@
         </environment>
     </environments>
     <mappers> 
-        
+        <mapper resource="modelo/mybatis/mapper/AutenticacionMapper.xml"/>
+        <mapper resource="modelo/mybatis/mapper/ProfesorMapper.xml"/>
     </mappers>
 </configuration>
