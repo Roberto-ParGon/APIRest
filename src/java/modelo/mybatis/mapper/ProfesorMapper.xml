@@ -13,4 +13,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         on r.idRol = profesor.idRol;
     </select>
     
+    <insert id="registrar" parameterType="pojo.Profesor"> 
+        INSERT INTO Profesor 
+        (nombre, `apellidoPaterno`, `apellidoMaterno` , `noPersonal`, `password`, 
+        `fechaNacimiento`, `fechaContratacion`, `idRol`) 
+        values (#{nombre}, #{apellidoPaterno}, #{apellidoMaterno}, #{noPersonal},
+        #{password},#{fechaNacimiento}, #{fechaContratacion}, #{idRol})
+    </insert>
 </mapper>
