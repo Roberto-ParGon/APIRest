@@ -86,4 +86,36 @@ public class ProfesorImp {
         }
         return respuesta;
     }
+
+    public static Respuesta eliminar(int idProfesor) {
+        Respuesta respuesta = new Respuesta();
+        SqlSession conexionBD = MyBatisUtil.getSession();
+        if (idProfesor == 0) {
+            respuesta.setError(true);
+            respuesta.setMensaje("El ID del profesor no es valido.");
+            return respuesta;
+        }
+        if (conexionBD != null) {
+            try {
+                int filasAfectadas = conexionBD.delete("profesor.eliminar", idProfesor);
+                conexionBD.commit();
+
+                if (filasAfectadas > 0) {
+                    respuesta.setError(false);
+                    respuesta.setMensaje("Profesor eliminado exitosamente");
+                } else {
+                    respuesta.setError(true);
+                    respuesta.setMensaje("Error al eliminar al profesor.");
+                }
+                conexionBD.close();
+            } catch (Exception e) {
+                respuesta.setError(true);
+                respuesta.setMensaje(e.getMessage());
+            }
+        } else {
+            respuesta.setError(true);
+            respuesta.setMensaje("No hubo conexión con la base de datos");
+        }
+        return respuesta;
+    }
 }
