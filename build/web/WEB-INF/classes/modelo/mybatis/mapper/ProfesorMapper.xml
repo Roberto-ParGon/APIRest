@@ -24,8 +24,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <update id="editar" parameterType="pojo.Profesor">
         UPDATE Profesor
         SET nombre=#{nombre}, apellidoPaterno=#{apellidoPaterno}, apellidoMaterno=#{apellidoMaterno}, 
-        fechaNacimiento=#{fechaNacimiento},fechaContratacion=#{fechaContratacion}, idRol=#{idRol}; 
-        WHERE idProfesor = #{idProfesor};
+        fechaNacimiento=#{fechaNacimiento},fechaContratacion=#{fechaContratacion}, idRol=#{idRol} 
+        WHERE idProfesor = #{idProfesor}
     </update>
     
     <delete id="eliminar" parameterType="int">
