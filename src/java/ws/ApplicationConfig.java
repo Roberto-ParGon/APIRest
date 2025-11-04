@@ -24,6 +24,7 @@ public class ApplicationConfig extends javax.ws.rs.core.Application {
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(ws.AlumnoWS.class);
         resources.add(ws.AutenticacionWS.class);
+        resources.add(ws.CatalogoWS.class);
         resources.add(ws.ProfesorWS.class);
         resources.add(ws.Prueba.class);
     }

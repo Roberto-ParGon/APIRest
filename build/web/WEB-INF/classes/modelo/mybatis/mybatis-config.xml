@@ -19,5 +19,6 @@
     <mappers> 
         <mapper resource="modelo/mybatis/mapper/AutenticacionMapper.xml"/>
         <mapper resource="modelo/mybatis/mapper/ProfesorMapper.xml"/>
+        <mapper resource="modelo/mybatis/mapper/CatalogoMapper.xml"/>
     </mappers>
 </configuration>
