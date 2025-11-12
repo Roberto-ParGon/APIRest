@@ -34,4 +34,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         
     </delete>
     
+    <update id="guardar-foto" parameterType="pojo.Profesor"> 
+        UPDATE Profesor
+        SET foto = #{foto}
+        WHERE idProfesor = #{idProfesor}
+    </update>
+    
+    <select id="obtener-foto" parameterType="int" resultType="pojo.Profesor">
+        SELECT idProfesor, TO_BASE64(foto) AS 'fotoBase64' 
+        FROM profesor 
+        WHERE idProfesor = #{idProfesor};
+    </select>
+    
 </mapper>
