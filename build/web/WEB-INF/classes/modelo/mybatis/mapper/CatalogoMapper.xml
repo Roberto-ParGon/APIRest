@@ -7,7 +7,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="catalogo" >
     
     <select id="roles" resultType="pojo.Rol">
-        SELECT idRol, rol from rol
+        SELECT idRol, rol 
+        FROM rol
+    </select>
+    
+    <select id="obtener-facultades" resultType="pojo.Facultad">
+        SELECT idFacultad, facultad 
+        FROM facultad;
+    </select>
+    
+    <select id="obtener-carreras-facultad" resultType="pojo.Carrera" parameterType="int">
+        SELECT idCarrera, carrera, idFacultad
+        FROM carrera 
+        WHERE idFacultad = #{idFacultad}
     </select>
     
 </mapper>
