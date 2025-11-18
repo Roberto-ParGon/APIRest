@@ -23,6 +23,7 @@ public class Alumno {
     private String facultad;
     private byte[] foto;
     private String fotoBase64;
+    private String password;
 
     public Alumno() {
     }
@@ -145,6 +146,14 @@ public class Alumno {
 
     public void setFotoBase64(String fotoBase64) {
         this.fotoBase64 = fotoBase64;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
 }

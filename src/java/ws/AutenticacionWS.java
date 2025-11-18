@@ -6,6 +6,7 @@ package ws;
 
 import dominio.AutenticacionImp;
 import dto.RSAutenticacionAdmin;
+import dto.RSAutenticacionAlumno;
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
@@ -28,5 +29,15 @@ public class AutenticacionWS {
             return AutenticacionImp.autenticarAdministracion(noPersonal, password);
         }
         throw new BadRequestException("Credenciales incorrectas.");
+    }
+
+    @Path("alumno")
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public RSAutenticacionAlumno autenticarAlumno(@FormParam("matricula") String matricula, @FormParam("password") String password) {
+        if ((matricula != null && !matricula.isEmpty() && matricula.toLowerCase().startsWith("s")) && (password != null && !password.isEmpty())) {
+            return AutenticacionImp.autenticarAlumno(matricula, password);
+        }
+        throw new BadRequestException("Credenciales Incorrectas");
     }
 }

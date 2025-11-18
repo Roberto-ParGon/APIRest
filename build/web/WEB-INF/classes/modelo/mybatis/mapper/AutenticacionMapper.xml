@@ -13,4 +13,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         where noPersonal =#{noPersonal} and password = #{password}
     </select>
 
+    <select id="alumno" parameterType="map" resultType="pojo.Alumno">
+        SELECT idAlumno, nombre, apellidoPaterno, apellidoMaterno,matricula, correo, fechaNacimiento, c.idCarrera, c.carrera, f.facultad 
+        FROM alumno INNER JOIN carrera c ON c.idCarrera = alumno.idCarrera 
+        INNER JOIN facultad f ON f.idFacultad = c.idFacultad 
+        WHERE matricula = #{matricula} AND password = #{password};
+    </select>
+
 </mapper>
